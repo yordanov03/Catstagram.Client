@@ -20,7 +20,8 @@ this.loginForm = this.fb.group({
   ngOnInit(): void {
   }
 login(){
-  this.authService.login(this.loginForm.value).subscribe(data =>{console.log(data)})
+  this.authService.login(this.loginForm.value).subscribe(data =>{
+    this.authService.saveToken(data['token'])})
 }
 
 get username(){
