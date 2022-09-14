@@ -7,10 +7,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './services/auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CreatecatComponent } from './createcat/createcat.component'
 import { CatsService } from './services/cats.service'
 import { AuthGuardService } from './services/auth-guard.service';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 
 @NgModule({
@@ -26,7 +27,14 @@ import { AuthGuardService } from './services/auth-guard.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthService, CatsService, AuthGuardService],
+  providers: [
+    AuthService, 
+    CatsService, 
+    AuthGuardService,
+  {provide: HTTP_INTERCEPTORS,
+  useClass: TokenInterceptorService,
+  multi: true}],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
