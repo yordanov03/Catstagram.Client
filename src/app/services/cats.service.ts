@@ -15,7 +15,6 @@ private catPath = environment.apiUrl + 'cats/create'
 
   createCat(data: Observable<Cat>){
     let headers = new HttpHeaders();
-    console.log("ebi si maikata")
     headers = headers.set('Authorization', `Bearer ${this.authService.getToken()}`);
     return this.http.post<Cat>(this.catPath, data, {headers})
   }
