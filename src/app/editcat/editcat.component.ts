@@ -19,7 +19,7 @@ cat: Cat;
     private router: Router) {
       this.catForm=this.fb.group({
         'id': [''],
-          'description':['']
+        'description':['']
       })
      }
 
