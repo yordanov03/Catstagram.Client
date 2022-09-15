@@ -29,4 +29,8 @@ cats: Array<Cat>;
 
     })
   }
+
+  editCat(id){
+    this.router.navigate(['cats/' + id + '/edit'])
+  }
 }

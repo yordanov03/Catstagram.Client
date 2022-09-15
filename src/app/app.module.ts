@@ -14,6 +14,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ListcatsComponent } from './listcats/listcats.component';
 import { CatdeatilsComponent } from './catdetails/catdetails.component';
+import { EditcatComponent } from './editcat/editcat.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CatdeatilsComponent } from './catdetails/catdetails.component';
     RegisterComponent,
     CreatecatComponent,
     ListcatsComponent,
-    CatdeatilsComponent
+    CatdeatilsComponent,
+    EditcatComponent
   ],
   imports: [
     BrowserModule,

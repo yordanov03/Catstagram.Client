@@ -7,6 +7,7 @@ import { CreatecatComponent } from './createcat/createcat.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { ListcatsComponent } from './listcats/listcats.component';
 import { CatdeatilsComponent } from './catdetails/catdetails.component';
+import { EditcatComponent } from './editcat/editcat.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'createcat', component: CreatecatComponent, canActivate: [AuthGuardService] },
   { path: 'mycats', component: ListcatsComponent },
   { path: 'catdetails/:id', component: CatdeatilsComponent, canActivate: [AuthGuardService] },
+  { path: 'cats/:id/edit', component: EditcatComponent, canActivate: [AuthGuardService] },
 ]
 
 @NgModule({
