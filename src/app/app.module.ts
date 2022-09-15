@@ -12,6 +12,7 @@ import { CreatecatComponent } from './createcat/createcat.component'
 import { CatsService } from './services/cats.service'
 import { AuthGuardService } from './services/auth-guard.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { ListcatsComponent } from './listcats/listcats.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    CreatecatComponent
+    CreatecatComponent,
+    ListcatsComponent
   ],
   imports: [
     BrowserModule,

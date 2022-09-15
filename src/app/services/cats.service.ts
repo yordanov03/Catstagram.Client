@@ -9,12 +9,15 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class CatsService {
-private catPath = environment.apiUrl + 'cats/create'
-  constructor(private http: HttpClient,
-    private authService: AuthService) { }
+private createCatPath = environment.apiUrl + 'cats/create'
+private myCatsPath = environment.apiUrl + 'cats/mycats'
+  constructor(private http: HttpClient) { }
 
-  createCat(data: Observable<Cat>){
-    let headers = new HttpHeaders();
-    return this.http.post<Cat>(this.catPath, data)
+  createCat(data): Observable<Cat>{
+    return this.http.post<Cat>(this.createCatPath, data)
+  }
+
+  getCats(): Observable<Array<Cat>>{
+    return this.http.get<Array<Cat>>(this.myCatsPath);
   }
 }
