@@ -1,3 +1,4 @@
+import { isDelegatedFactoryMetadata } from '@angular/compiler/src/render3/r3_factory';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cat } from '../models/cat';
@@ -14,9 +15,18 @@ cats: Array<Cat>;
     private router: Router) { }
 
   ngOnInit(): void {
+    this.fetchCats();
+  }
+
+  fetchCats(){
     this.catsService.getCats().subscribe(cats=>{
       this.cats = cats
-      console.log(cats);
+    })
+  }
+  
+  deleteCat(id){
+    this.catsService.deleteCat(id).subscribe(res=>{
+
     })
   }
 }

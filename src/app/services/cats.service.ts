@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, ɵisDefaultChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment'
 import { Cat } from '../models/cat';
@@ -11,7 +11,8 @@ import { AuthService } from './auth.service';
 export class CatsService {
 private createCatPath = environment.apiUrl + 'cats/create'
 private myCatsPath = environment.apiUrl + 'cats/mycats'
-private catDetails = environment.apiUrl + 'cats'
+private catDetailsPath = environment.apiUrl + 'cats'
+private deleteCatPath = environment.apiUrl + 'cats'
   constructor(private http: HttpClient) { }
 
   createCat(data): Observable<Cat>{
@@ -23,6 +24,10 @@ private catDetails = environment.apiUrl + 'cats'
   }
 
   getCatById(id): Observable<Cat>{
-    return this.http.get<Cat>(this.catDetails +"/" + id)
+    return this.http.get<Cat>(this.catDetailsPath +"/" + id)
+  }
+
+  deleteCat(id){
+    return this.http.delete(this.deleteCatPath +"/" + id)
   }
 }
