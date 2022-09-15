@@ -11,6 +11,7 @@ import { AuthService } from './auth.service';
 export class CatsService {
 private createCatPath = environment.apiUrl + 'cats/create'
 private myCatsPath = environment.apiUrl + 'cats/mycats'
+private catDetails = environment.apiUrl + 'cats'
   constructor(private http: HttpClient) { }
 
   createCat(data): Observable<Cat>{
@@ -19,5 +20,9 @@ private myCatsPath = environment.apiUrl + 'cats/mycats'
 
   getCats(): Observable<Array<Cat>>{
     return this.http.get<Array<Cat>>(this.myCatsPath);
+  }
+
+  getCatById(id): Observable<Cat>{
+    return this.http.get<Cat>(this.catDetails +"/" + id)
   }
 }
