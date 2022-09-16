@@ -16,6 +16,7 @@ import { ListcatsComponent } from './listcats/listcats.component';
 import { CatdeatilsComponent } from './catdetails/catdetails.component';
 import { EditcatComponent } from './editcat/editcat.component';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -33,7 +34,8 @@ import { ErrorInterceptorService } from './services/error-interceptor.service';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     AuthService, 
