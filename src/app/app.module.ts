@@ -15,6 +15,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ListcatsComponent } from './listcats/listcats.component';
 import { CatdeatilsComponent } from './catdetails/catdetails.component';
 import { EditcatComponent } from './editcat/editcat.component';
+import { ErrorInterceptorService } from './services/error-interceptor.service';
+
 
 
 @NgModule({
@@ -39,7 +41,10 @@ import { EditcatComponent } from './editcat/editcat.component';
     AuthGuardService,
   {provide: HTTP_INTERCEPTORS,
   useClass: TokenInterceptorService,
-  multi: true}],
+  multi: true},
+{provide: HTTP_INTERCEPTORS,
+useClass: ErrorInterceptorService,
+multi: true}],
   
   bootstrap: [AppComponent]
 })
