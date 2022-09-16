@@ -37,7 +37,7 @@ cat: Cat;
   }
 editCat(){
   this.catsService.editCat(this.catForm.value).subscribe(res=>{
-    this.router.navigate(['cats'])
+    this.router.navigate(['mycats'])
   })
 }
 }

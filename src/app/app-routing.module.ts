@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'createcat', component: CreatecatComponent, canActivate: [AuthGuardService] },
-  { path: 'mycats', component: ListcatsComponent },
+  { path: 'mycats', component: ListcatsComponent, canActivate: [AuthGuardService] },
   { path: 'catdetails/:id', component: CatdeatilsComponent, canActivate: [AuthGuardService] },
   { path: 'cats/:id/edit', component: EditcatComponent, canActivate: [AuthGuardService] },
 ]

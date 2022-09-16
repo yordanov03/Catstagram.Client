@@ -4,7 +4,7 @@
  <div class="col-lg-4">
         <form [formGroup]="catForm">
             <div class="mb-3">
-                <img [src]="cat.imageUrl" alt="" width="100%">
+                <img src="{{cat?.imageUrl}}" alt="" width="100%">
                 <label for="exampleFormControlTextarea1" class="form-label">Descritpion</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="description"></textarea>
               </div>

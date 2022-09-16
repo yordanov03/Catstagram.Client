@@ -13,7 +13,7 @@ private createCatPath = environment.apiUrl + 'cats/create'
 private myCatsPath = environment.apiUrl + 'cats/mycats'
 private catDetailsPath = environment.apiUrl + 'cats'
 private deleteCatPath = environment.apiUrl + 'cats'
-private editCatPath = environment.apiUrl + 'cats'
+private editCatPath = environment.apiUrl + 'cats/update'
   constructor(private http: HttpClient) { }
 
   createCat(data): Observable<Cat>{
